@@ -54,20 +54,5 @@ class Maze:
         cur = unvisited.pop()
         stack = []
 
-        while unvisited:
-            try:
-                n = choice([c for c in map(lambda x: self.get(*x), cur.nbs) if c in unvisited])
-                stack.append(cur)
-                nx, ny = cur.x - (cur.x - n.x) // 2, cur.y - (cur.y - n.y) // 2
-                self.grid[nx][ny] = Cell(nx, ny, self)
-                self.grid[cur.x][cur.y] = Cell(cur.x, cur.y, self)
-                cur = n
-                unvisited.remove(n)
 
-                if animate:
-                    self.draw(screen)
-                    pygame.display.update()
-                    pygame.time.wait(10)
-            except IndexError:
-                if stack:
-                    cur = stack.pop()
+                
