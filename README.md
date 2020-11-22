@@ -4,7 +4,8 @@ from random import choice
 
 
 class Cell(pygame.sprite.Sprite):
-    w, h = 16, 16
+    width = 800
+    height = 800
 
     def __init__(self, x, y, maze):
         pygame.sprite.Sprite.__init__(self)
